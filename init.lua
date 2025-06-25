@@ -1,0 +1,3 @@
+require("discomanfulanito")
+print("hello")
+
