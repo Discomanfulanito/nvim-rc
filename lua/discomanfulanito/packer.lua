@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-frontend/
 -- Only required if you have packer configured as `opt` 
 
 vim.cmd [[packadd packer.nvim]]
@@ -12,6 +11,16 @@ return require('packer').startup(function(use)
 	    'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	    -- or                            , branch = '0.1.x',
 	    requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    use {'nvzone/volt'}
+    use {
+	    'nvzone/typr',
+	    requires = {'nvzone/volt'},
+	    config = function()
+		    require('typr').setup({})
+	    end,
+	    cmd = {'Typr', 'TyprStats'}
     }
     -- Colors
 
