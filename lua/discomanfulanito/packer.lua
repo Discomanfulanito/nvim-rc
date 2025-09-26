@@ -22,9 +22,19 @@ return require('packer').startup(function(use)
 	    end,
 	    cmd = {'Typr', 'TyprStats'}
     }
+    
+    use {
+	    'MeanderingProgrammer/render-markdown.nvim',
+	    after = { 'nvim-treesitter' },
+	    requires = { 'echasnovski/mini.nvim', opt = true }, 
+	    config = function()
+		    require('render-markdown').setup({})
+	    end,
+    } 
+
     use {
 	    'nvim-treesitter/nvim-treesitter',
-	    {run = ':TSUpdate'}
+	    run = ':TSUpdate'
     }
     use {             'nvim-treesitter/playground'                    }
     use {	      'theprimeagen/harpoon'                          }
